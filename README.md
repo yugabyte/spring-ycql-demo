@@ -37,7 +37,7 @@ $ ./bin/cqlsh -f src/main/resources/cql/schema.cql
 
 # Spring Data Cassandra Dependencies
 
-Spring Data Cassandra provides repository support for YugabyteDB and we'll use Yugabyte CQL driver for enabling Topology Awareness, Shard Awareness and Distributed Transactions to Spring Boot application 
+Spring Data Cassandra provides repository support for YugabyteDB and we'll use Yugabyte CQL driver for enabling Topology Awareness, Shard Awareness and Distributed Transactions in Spring Boot application 
 
 ```
 <dependencies>
@@ -82,7 +82,7 @@ $ java -jar target/spring-ycql-demo-0.0.1-SNAPSHOT.jar
 
 ## Create a customer
 
-You can create a product listing as follows:
+You can create a customer as follows:
 ```
 $ curl \
 --data '{ "id": "customer1", "name": "Alice", "emailId": "alice@wonderland.com" }' \
