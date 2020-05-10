@@ -56,7 +56,7 @@ Spring Data Cassandra provides repository support for YugabyteDB and we'll use Y
 <dependency>
   <groupId>com.yugabyte</groupId>
   <artifactId>cassandra-driver-core</artifactId>
-  <version>3.2.0-yb-19</version>
+  <version>3.8.0-yb-4</version>
 </dependency>
 ```
 
