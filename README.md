@@ -13,18 +13,15 @@ App is a REST based application which exposes REST APIs for CRUD operations on a
 # Environment Setup
 
 
-## Step 1: Start the YugabyteDB cluster
+## Step 1: Get the Yugabyte cloud Instance credentials
 
-You can do so using following command from YugabyteDB installation directory,
+- Click Download CA Cert to download the cluster `root.crt` certificate to your computer.
+- Click YCQL to display the connection parameters. These include:
+     - LocalDatacenter: The name of the local datacenter for the cluster.
+     - Host: The cluster host name. 
+     - Port: The port number of the YCQL client API on the YugabyteDB database (9042).
+     - Username and Password
 
-
-```
-$ ./bin/yb-ctl destroy && ./bin/yb-ctl --rf 3 create --tserver_flags="cql_nodelist_refresh_interval_secs=10" --master_flags="tserver_unresponsive_timeout_ms=10000"
-```
-
-This will start a 3-node local cluster with replication factor (RF) 3. The flag cql_nodelist_refresh_interval_secs configures how often the drivers will get notified of cluster topology changes and the following flag tserver_unresponsive_timeout_ms is for the master to mark a node as dead after it stops responding (heartbeats) for 10 seconds.
-
-Note: (Detailed installation instructions)[https://docs.yugabyte.com/latest/quick-start/install/#macos] for YugabyteDB on local workstation.
 
 ## Step 2: Initialize YugabyteDB
 
@@ -47,7 +44,7 @@ Spring Data Cassandra provides repository support for YugabyteDB and we'll use Y
     <exclusions>
         <exclusion>
             <groupId>com.datastax.cassandra</groupId>
-            <artifactId>cassandra-driver-core</artifactId>
+            <artifactId>java-driver-core</artifactId>
         </exclusion>
     </exclusions>
 </dependency>
@@ -55,8 +52,8 @@ Spring Data Cassandra provides repository support for YugabyteDB and we'll use Y
 <!-- YugabyteDB YCQL Driver -->
 <dependency>
   <groupId>com.yugabyte</groupId>
-  <artifactId>cassandra-driver-core</artifactId>
-  <version>3.8.0-yb-4</version>
+  <artifactId>java-driver-core</artifactId>
+  <version>4.6.0-yb-9</version>
 </dependency>
 ```
 
