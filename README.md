@@ -16,6 +16,7 @@ App is a REST based application which exposes REST APIs for CRUD operations on a
 ## Step 1: Get the Yugabyte cloud Instance credentials
 
 - Click Download CA Cert to download the cluster `root.crt` certificate to your computer.
+     - Then copy the root certificate `root.crt` into the src/main/resources directory.
 - Click YCQL to display the connection parameters. These include:
      - LocalDatacenter: The name of the local datacenter for the cluster.
      - Host: The cluster host name. 
